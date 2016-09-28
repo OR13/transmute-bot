@@ -1,6 +1,6 @@
 "use strict";
 var Login_Skill_1 = require('./Login/Login.Skill');
-var Login_Message_1 = require('./Login/Login.Message');
+var Talkabot_Message_1 = require('./Talkabot/Talkabot.Message');
 var DefaultSkill = (function () {
     function DefaultSkill() {
     }
@@ -8,7 +8,7 @@ var DefaultSkill = (function () {
         intents.onDefault([
             function (session, args, next) {
                 // console.log('onDefault: ', session.privateConversationData)
-                if (!session.privateConversationData.token) {
+                if (!session.privateConversationData.name) {
                     session.beginDialog(Login_Skill_1.LoginSkill.Dialogs.Login);
                 }
                 else {
@@ -16,7 +16,7 @@ var DefaultSkill = (function () {
                 }
             },
             function (session, results) {
-                session.send(Login_Message_1.LoginMessage.announceSessionIdenity(session));
+                session.send(Talkabot_Message_1.TalkabotMessage.announceSessionIdenity(session));
             }
         ]);
     };

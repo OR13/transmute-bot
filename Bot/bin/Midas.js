@@ -1,6 +1,6 @@
 "use strict";
 var Default_1 = require('./Skills/Default');
-var Authy_Skill_1 = require('./Skills/Authy/Authy.Skill');
+var Talkabot_Skill_1 = require('./Skills/Talkabot/Talkabot.Skill');
 var builder = require('botbuilder');
 var Bot = (function () {
     function Bot(connector) {
@@ -10,7 +10,8 @@ var Bot = (function () {
         this.bot.dialog('/', intents);
         // A Skill is a mapping of Intentions to Dialogs
         // LoginSkill.register(this.bot, intents);
-        Authy_Skill_1.AuthySkill.register(this.bot, intents);
+        // AuthySkill.register(this.bot, intents);
+        Talkabot_Skill_1.TalkabotSkill.register(this.bot, intents);
         Default_1.DefaultSkill.register(this.bot, intents);
     }
     return Bot;

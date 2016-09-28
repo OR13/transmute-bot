@@ -2,3 +2,6 @@ typings
 node_modules
 .vscode/launch.json
 
+.DS_Store
+
+npm-debug.log

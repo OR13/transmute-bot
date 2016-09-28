@@ -3,6 +3,8 @@ import { LoginSkill } from './Skills/Login/Login.Skill'
 import { DefaultSkill } from './Skills/Default'
 import { AuthySkill } from './Skills/Authy/Authy.Skill'
 
+import { TalkabotSkill } from './Skills/Talkabot/Talkabot.Skill'
+
 var builder = require('botbuilder');
 
 export class Bot {
@@ -20,13 +22,15 @@ export class Bot {
 
             // A Skill is a mapping of Intentions to Dialogs
 
-
             // LoginSkill.register(this.bot, intents);
-            
-            AuthySkill.register(this.bot, intents);
 
-            DefaultSkill.register(this.bot, intents);
+            // AuthySkill.register(this.bot, intents);
+
+            TalkabotSkill.register(this.bot, intents);
+
             
+            DefaultSkill.register(this.bot, intents);
+
       }
 
 

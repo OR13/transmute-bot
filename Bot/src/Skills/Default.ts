@@ -4,6 +4,10 @@ import { LoginSkill } from './Login/Login.Skill'
 import { LoginService } from './Login/Login.Service'
 import { LoginMessage } from './Login/Login.Message'
 
+
+import { TalkabotMessage } from './Talkabot/Talkabot.Message'
+
+
 export class DefaultSkill {
 
     static register = function (
@@ -17,14 +21,14 @@ export class DefaultSkill {
 
                 // console.log('onDefault: ', session.privateConversationData)
 
-                if (!session.privateConversationData.token) {
+                if (!session.privateConversationData.name) {
                     session.beginDialog(LoginSkill.Dialogs.Login);
                 } else {
                     next();
                 }
             },
             function (session, results) {
-                session.send(LoginMessage.announceSessionIdenity(session));
+                session.send(TalkabotMessage.announceSessionIdenity(session));
             }
         ]);
     }

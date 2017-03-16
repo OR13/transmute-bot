@@ -5,6 +5,8 @@ import { AuthySkill } from './Skills/Authy/Authy.Skill'
 
 import { TalkabotSkill } from './Skills/Talkabot/Talkabot.Skill'
 
+import { MonarchSkill } from './Skills/Monarch/Monarch.Skill'
+
 var builder = require('botbuilder');
 
 export class Bot {
@@ -26,10 +28,10 @@ export class Bot {
 
             // AuthySkill.register(this.bot, intents);
 
-            TalkabotSkill.register(this.bot, intents);
+            // TalkabotSkill.register(this.bot, intents);
 
-            
-            DefaultSkill.register(this.bot, intents);
+            MonarchSkill.register(this.bot, intents);
+
 
       }
 
